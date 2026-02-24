@@ -8,6 +8,7 @@ An Odoo 19 module that displays Arabic product names in the Point of Sale (POS) 
 - Show Arabic names in Order Lines
 - Print Arabic names on POS receipts
 - Configurable setting to enable/disable Arabic names per POS configuration
+- Adds `arabic_name` field to products
 
 ## Requirements
 
@@ -16,11 +17,13 @@ An Odoo 19 module that displays Arabic product names in the Point of Sale (POS) 
 
 ## Installation
 
-1. Copy the `product_arabic` folder to your Odoo addons directory
-2. Restart Odoo server
-3. Update the module list in Odoo Apps
-4. Search for "Arabic Product Name in POS"
-5. Click Install
+1. Clone or download this repository
+2. **Important:** Rename the folder to `arabic_product_pos`
+3. Copy the renamed `arabic_product_pos` folder to your Odoo addons directory
+4. Restart Odoo server
+5. Update the module list in Odoo Apps
+6. Search for "Arabic Product Name in POS"
+7. Click Install
 
 ## Configuration
 
@@ -33,32 +36,33 @@ After installation:
 
 ## Usage
 
-Once enabled, the module will display Arabic product names in:
-- Product cards in the POS interface
-- Order lines in the current order
-- Printed receipts
-
-Note: Products must have an `arabic_name` field defined in the product model for Arabic names to display.
+1. Open any product and fill in the **Arabic Name** field
+2. Open POS and the Arabic names will display in:
+   - Product cards in the POS interface
+   - Order lines in the current order
+   - Printed receipts
 
 ## Module Structure
 
 ```
-product_arabic/
+arabic_product_pos/
 ├── __init__.py
 ├── __manifest__.py
 ├── models/
 │   ├── __init__.py
-│   └── pos_config.py       # POS config extension for Arabic name setting
+│   ├── pos_config.py       # POS config extension for Arabic name setting
+│   ├── product.py          # Product model extension (adds arabic_name field)
+│   └── pos_order.py        # POS field loading for arabic_name
 ├── views/
 │   └── pos_views.xml       # POS config form view extension
 └── static/
     ├── src/
     │   ├── js/
-    │   │   └── pos_arabic_name.js    # Frontend logic
+    │   │   └── pos_arabic_name.js          # Frontend logic
     │   ├── xml/
-    │   │   └── pos_arabic_templates.xml
+    │   │   └── pos_arabic_templates.xml    # POS template overrides
     │   └── css/
-    │       └── pos_arabic.css
+    │       └── pos_arabic.css              # RTL Arabic styles
     └── description/
         ├── icon.png
         └── index.html

@@ -14,11 +14,9 @@
     ],
     'assets': {
         'point_of_sale.assets': [
-            'product_arabic/static/src/js/pos_arabic_name.js',
-            'product_arabic/static/src/css/pos_arabic.css',
-        ],
-        'point_of_sale.assets_templates': [
-            'product_arabic/static/src/xml/pos_arabic_templates.xml',
+            'arabic_product_pos/static/src/js/pos_arabic_name.js',
+            'arabic_product_pos/static/src/css/pos_arabic.css',
+            'arabic_product_pos/static/src/xml/pos_arabic_templates.xml',
         ],
     },
     'installable': True,
