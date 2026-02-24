@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Product Item Template with Arabic Name Display -->
+    <template id="product_item_arabic" inherit_id="point_of_sale.ProductItem" name="Product Item Arabic">
+        <xpath expr="//div[hasclass('product-name')]" position="after">
+            <t t-if="env.pos.config.show_arabic_product_names and props.product.arabic_name">
+                <div class="product-name-arabic" t-esc="props.product.arabic_name"/>
+            </t>
+        </xpath>
+    </template>
+</odoo>

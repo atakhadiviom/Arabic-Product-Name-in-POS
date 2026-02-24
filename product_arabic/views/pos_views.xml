@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Add Arabic Name option to POS config form view -->
+    <record id="pos_config_form_view_arabic" model="ir.ui.view">
+        <field name="name">pos.config.form.arabic</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='module_pos_restaurant']" position="after">
+                <div class="row mt16" id="arabic_pos_options">
+                    <label string="Arabic Product Names" class="col-md-3 o_light_label"/>
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="checkbox">
+                                    <label>
+                                        <field name="show_arabic_product_names" class="o_input_inline"/>
+                                        <span>Show Arabic Product Names in POS</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
