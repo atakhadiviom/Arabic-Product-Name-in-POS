@@ -2,42 +2,37 @@
  * Arabic Product Name in POS - Styles
  */
 
-/* Product Arabic Name Styling */
+/* Product Arabic Name in Product Grid */
 .product-name-arabic {
     font-family: 'Arial Unicode MS', 'Segoe UI', Tahoma, 'Arial', sans-serif;
     font-size: 0.85em;
-    color: #555;
+    color: #444;
     margin-top: 2px;
     text-align: center;
     direction: rtl;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    min-height: 1.2em;
 }
 
-/* Order Line Arabic Name Styling */
+/* Order Line Arabic Name */
 .line-name-arabic {
     font-family: 'Arial Unicode MS', 'Segoe UI', Tahoma, 'Arial', sans-serif;
     font-size: 0.75em;
-    color: #777;
+    color: #666;
     margin-top: 1px;
     direction: rtl;
+    white-space: nowrap;
 }
 
-/* Receipt Arabic Name Styling */
+/* Receipt Arabic Name */
 .receipt-line-arabic {
     font-family: 'Arial Unicode MS', 'Segoe UI', Tahoma, 'Arial', sans-serif;
     font-size: 0.8em;
     direction: rtl;
     text-align: right;
-}
-
-/* RTL Support for Arabic */
-.pos.rtl .product-name-arabic,
-.pos.rtl .line-name-arabic,
-.pos.rtl .receipt-line-arabic {
-    text-align: right;
-    direction: rtl;
+    margin-top: 2px;
 }
 
 /* Product card adjustments when showing Arabic name */

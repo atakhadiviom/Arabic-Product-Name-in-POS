@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Product Item Template with Arabic Name Display -->
-    <template id="product_item_arabic" inherit_id="point_of_sale.ProductItem" name="Product Item Arabic">
+    <!-- Product Item Template - Show Arabic Name below product name -->
+    <template id="product_item_arabic_template" inherit_id="point_of_sale.ProductItem" name="Product Item Arabic">
         <xpath expr="//div[hasclass('product-name')]" position="after">
-            <t t-if="env.pos.config.show_arabic_product_names and props.product.arabic_name">
+            <t t-if="props.product.arabic_name and env.pos.config.show_arabic_product_names">
                 <div class="product-name-arabic" t-esc="props.product.arabic_name"/>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Orderline Template - Show Arabic Name in order lines -->
+    <template id="orderline_arabic_template" inherit_id="point_of_sale.Orderline" name="Orderline Arabic">
+        <xpath expr="//div[hasclass('product-name')]" position="after">
+            <t t-if="props.line.product.arabic_name and env.pos.config.show_arabic_product_names">
+                <div class="line-name-arabic" t-esc="props.line.product.arabic_name"/>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Receipt Template - Show Arabic Name in receipts -->
+    <template id="receipt_arabic_template" inherit_id="point_of_sale.ReceiptLine" name="Receipt Line Arabic">
+        <xpath expr="//t[@t-esc='props.line.product_name']" position="after">
+            <t t-if="props.line.product.arabic_name and env.pos.config.show_arabic_product_names">
+                <div class="receipt-line-arabic" t-esc="props.line.product.arabic_name"/>
             </t>
         </xpath>
     </template>

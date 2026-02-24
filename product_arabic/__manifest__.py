@@ -3,16 +3,13 @@
     'name': 'Arabic Product Name in POS',
     'version': '19.0.1.0.0',
     'category': 'Point Of Sale',
-    'summary': 'Adds Arabic product names in POS product screen and receipt',
+    'summary': 'Display Arabic product names in POS Product Card, Order Line and Receipt',
     'author': 'Your Name',
     'website': 'https://your-website.com',
     'depends': [
         'point_of_sale',
-        'product',
-        'base',
     ],
     'data': [
-        'views/product_views.xml',
         'views/pos_views.xml',
     ],
     'assets': {
@@ -27,8 +24,5 @@
     'installable': True,
     'auto_install': False,
     'license': 'LGPL-3',
-    'external_dependencies': {
-        'python': [],
-    },
     'application': False,
 }
