@@ -4,13 +4,14 @@
     'version': '19.0.1.0.0',
     'category': 'Point Of Sale',
     'summary': 'Display Arabic product names in POS Product Card, Order Line and Receipt',
-    'author': 'Your Name',
-    'website': 'https://your-website.com',
+    'author': 'SynthoERP',
+    'website': 'https://atakhadivi.com',
     'depends': [
         'point_of_sale',
     ],
     'data': [
         'views/pos_views.xml',
+        'views/product_views.xml',
     ],
     'assets': {
         'point_of_sale.assets': [
