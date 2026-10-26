@@ -9,5 +9,6 @@ class PosSession(models.Model):
     def _loader_params_product_product(self):
         """Add arabic_name to the fields loaded for products in POS"""
         result = super()._loader_params_product_product()
-        result['search_params']['fields'].append('arabic_name')
+        if 'arabic_name' not in result['search_params']['fields']:
+            result['search_params']['fields'].append('arabic_name')
         return result

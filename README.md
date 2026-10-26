@@ -74,4 +74,4 @@ LGPL-3
 
 ## Author
 
-Your Name
+SynthoERP (https://atakhadivi.com)
